@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripify</title>
+    <link rel="icon" href="/logo.png" type="image/png">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <link rel="stylesheet" href="/css/boilerplate.css">
+    <link rel="stylesheet" href="/css/rating.css">
+</head>
+<body class="layout-wrapper">
+    <%- include("../includes/navbar.ejs") %>
+    <main class="content-wrapper">
+        <div class="container">
+            <%- include("../includes/flash.ejs") %>
+            <%- body %>
+        </div>
+    </main>
+    <%- include("../includes/footer.ejs") %>
+    <script src="/script/script.js"></script>
+</body>
+</html>

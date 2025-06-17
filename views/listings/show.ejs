@@ -1,0 +1,85 @@
+<% layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/show.css">
+
+<section class="show-page">
+  <!-- Listing Details -->
+  <section class="listing-section">
+    <img src="<%= list.image.url %>" alt="<%= list.title %>" class="listing-image" />
+    <h1 class="section-title listing-title"><%= list.title.charAt(0).toUpperCase() + list.title.slice(1) %></h1>
+    <p class="listing-owner">Created By: <b><%= list.owner.username.charAt(0).toUpperCase() + list.owner.username.slice(1) %></b></p>
+    <br>
+    <p class="listing-description"><%= list.description.charAt(0).toUpperCase() + list.description.slice(1) %></p>
+    <p class="listing-price">₹<%= list.price.toLocaleString("en-IN") %> / night</p>
+    <p class="listing-location"><strong>Location:</strong> <%= list.location.charAt(0).toUpperCase() + list.location.slice(1) %></p>
+    <p class="listing-country"><strong>Country:</strong> <%= list.country.charAt(0).toUpperCase() + list.country.slice(1) %></p>
+
+    <% if (currUser && currUser._id.equals(list.owner._id)) { %>
+      <div class="listing-actions">
+        <a href="/listings/<%= list._id %>/edit" class="btn edit-btn">Edit</a>
+        <form action="/listings/<%= list._id %>?_method=DELETE" method="POST" class="inline-form">
+          <button class="btn delete-btn" type="submit">Delete</button>
+        </form>
+      </div>
+      <% } %>
+  </section>
+
+  <% if (currUser) { %>
+  <hr class="divider" />
+  <% } %>
+
+  <!-- Review Section -->
+  <section class="review-section">
+    <% if(currUser) { %>
+      <h2 class="section-title">Leave a Review</h2>
+      <form action="/listings/<%= list._id %>/reviews" method="POST" class="review-form" id="reviewForm">
+        <fieldset class="starability-slot">
+          <legend>Select Ratings :</legend>
+          <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+          <input type="radio" id="first-rate1" name="rating" value="1" />
+          <label for="first-rate1" title="Terrible"></label>
+          <input type="radio" id="first-rate2" name="rating" value="2" />
+          <label for="first-rate2" title="Not good"></label>
+          <input type="radio" id="first-rate3" name="rating" value="3" />
+          <label for="first-rate3" title="Average"></label>
+          <input type="radio" id="first-rate4" name="rating" value="4" />
+          <label for="first-rate4" title="Very good"></label>
+          <input type="radio" id="first-rate5" name="rating" value="5" />
+          <label for="first-rate5" title="Amazing"></label>
+        </fieldset>
+      
+        <p class="selected-rating">Selected Rating : <span id="selected-rating">None</span></p>
+        <p id="rating-error" style="color: red; display: none;">Please select at least 1 star.</p>
+      
+        <label for="comment">Comment:</label>
+        <textarea name="comment" id="comment" rows="4" placeholder="Write your review here..." required></textarea>
+      
+        <button type="submit" class="btn submit-btn">Submit</button>
+      </form>
+<% } %>
+
+    <h2 class="section-title">All Reviews</h2>
+    <div class="reviews-list">
+      <% if (list.reviews.length === 0) { %>
+        <p class="no-reviews">No reviews yet.</p>
+      <% } else { %>
+        <% for (let review of list.reviews) { %>
+          <div class="review-card">
+            <div class="review-content">
+              <p class="review-name">👤 <%= review.author ? review.author.username.charAt(0).toUpperCase() + review.author.username.slice(1) : 'Anonymous' %></p>
+              <p class="review-rating">⭐ <%= review.rating %> / 5</p>
+              <p class="review-comment"><%= review.comment.charAt(0).toUpperCase() + review.comment.slice(1) %></p>
+            </div>
+            <form method="POST" action="/listings/<%= list._id %>/reviews/<%= review._id %>?_method=DELETE" class="inline-form">
+              <% if (currUser && currUser._id.equals(review.author._id)) { %>
+              <button class="btn delete-review-btn" type="submit">Delete</button>
+              <% } %>
+            </form>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+  </section>
+</section>
+
+<!-- JavaScript for dynamic rating display -->
+<script src="/script/show.js" defer></script>

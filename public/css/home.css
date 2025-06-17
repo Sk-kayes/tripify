@@ -1,0 +1,106 @@
+.home-hero {
+    background-color: #f0f4f8;
+    padding: 8rem 10vw;
+    text-align: center;
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.cta-btn {
+    padding: 0.75rem 2rem;
+    background-color: #f9a826;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    background-color: #e58e1a;
+}
+
+.features {
+    background-color: #ffffff;
+    padding: 4rem 10vw;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: #f6f5f2;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.preview-listings {
+    padding: 4rem 10vw;
+    text-align: center;
+    background-color: #f9fafb;
+}
+
+.listings-grid {
+    margin-top: 2vw;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.listing-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.trust {
+    background-color: #ffffff;
+    padding: 4rem 10vw;
+    text-align: center;
+}
+
+.trust h2 {
+    font-size: 2rem;
+}
+
+.trust p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #555;
+}

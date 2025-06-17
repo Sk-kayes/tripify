@@ -1,0 +1,16 @@
+<% layout("/layouts/boilerplate") %>
+
+<link rel="stylesheet" href="/css/index.css">
+
+<section class="listing-grid">
+    <% for(let list of allListings) { %>
+        <a href="/listings/<%= list._id %>" class="list-item">
+            <img src="<%= list.image.url %>" alt="image of <%= list.title %>">
+            <div class="list-info">
+                <p class="title"><%= list.title.charAt(0).toUpperCase() + list.title.slice(1) %></p>
+                <p class="price">₹<%= list.price.toLocaleString("en-IN") %> per night</p>
+                <p class="country"><%= list.country.charAt(0).toUpperCase() + list.country.slice(1) %> </p>
+            </div>
+        </a>
+    <% } %>
+</section>

@@ -1,0 +1,58 @@
+.company-page {
+    padding: 80px 5vw;
+    background: linear-gradient(to right, #e0f7fa, #f0f4f8);
+    color: #003344;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .company-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .company-header h1 {
+    font-size: 44px;
+    font-weight: 700;
+    color: #004d61;
+  }
+  
+  .company-header p {
+    font-size: 18px;
+    color: #007788;
+    margin-top: 8px;
+  }
+  
+  .company-section {
+    margin-bottom: 50px;
+  }
+  
+  .company-section h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #005f73;
+    margin-bottom: 12px;
+  }
+  
+  .company-section p,
+  .company-section ul {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #003344;
+  }
+  
+  .company-section ul {
+    padding-left: 20px;
+    list-style: disc;
+  }
+  
+  .company-quote {
+    margin-top: 60px;
+    padding: 30px;
+    background-color: #d0f0f7;
+    border-left: 6px solid #00b4d8;
+    font-style: italic;
+    font-size: 18px;
+    color: #004466;
+    text-align: center;
+  }
+  

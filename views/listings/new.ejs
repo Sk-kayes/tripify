@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/new.css">
+
+<div class="add-listing-container">
+  <h2>Create New Listing</h2>
+  <form id="listingForm" action="/listings" method="POST" enctype="multipart/form-data" novalidate>
+    <div>
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter listing title" required>
+      <span class="error" id="titleError">❌ Title is required</span>
+      <span class="success" id="titleSuccess"></span>
+    </div>
+
+    <div class="file-upload">
+      <label for="image">Upload Image</label>
+      <input type="file" id="image" name="image" accept="image/*" required>
+      <span class="error" id="imageError">❌ Please upload a valid image</span>
+      <span class="success" id="imageSuccess"></span>
+    </div>
+
+    <div>
+      <label for="price">Price</label>
+      <input type="number" id="price" name="price" placeholder="Enter price in ₹" required>
+      <span class="error" id="priceError">❌ Price must be greater than 0</span>
+      <span class="success" id="priceSuccess"></span>
+    </div>
+
+    <div>
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" placeholder="City or Area" required>
+      <span class="error" id="locationError">❌ Location is required</span>
+      <span class="success" id="locationSuccess"></span>
+    </div>
+
+    <div>
+      <label for="country">Country</label>
+      <input type="text" id="country" name="country" placeholder="Enter country" required>
+      <span class="error" id="countryError">❌ Country is required</span>
+      <span class="success" id="countrySuccess"></span>
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="5" placeholder="Add a short description..." required></textarea>
+      <span class="error" id="descriptionError">❌ Description is required</span>
+      <span class="success" id="descriptionSuccess"></span>
+    </div>
+
+    <button type="submit">Add Listing</button>
+  </form>
+</div>
+
+<script src="/script/new.js"></script>

@@ -1,0 +1,39 @@
+<% layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/signUpForm.css">
+
+<div class="signup-container">
+  <h2>Adventure Begins at Tripify</h2>
+  <form id="signupForm" action="/register" method="POST" novalidate>
+    <div>
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+      <span class="error" id="fullnameError">❌ Full Name is required</span>
+      <span class="success" id="fullnameSuccess">✅ Looks good!</span>
+    </div>
+
+    <div>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Choose a username" required>
+      <span class="error" id="usernameError">❌ Username is required</span>
+      <span class="success" id="usernameSuccess">✅ Looks good!</span>
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="example@email.com" required>
+      <span class="error" id="emailError">❌ Enter a valid email</span>
+      <span class="success" id="emailSuccess">✅ Valid email!</span>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Minimum 8 characters" required minlength="8">
+      <span class="error" id="passwordError">❌ Password must be at least 8 characters</span>
+      <span class="success" id="passwordSuccess">✅ Password looks strong!</span>
+    </div>
+
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
+
+<script src="/script/signUpForm.js"></script>

@@ -1,0 +1,120 @@
+.navbar {
+    width: 100%;
+    background-color: #f9fbfc;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+/* === Left Section: Logo === */
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+/* === Hamburger Menu (Moved Outside Left Section) === */
+.nav-toggle {
+    display: none;
+    background: none;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    color: #00171f;
+}
+
+/* === Right Section: Menu Items === */
+.right-section {
+    display: flex;
+    gap: 30px;
+}
+
+.right-section a {
+    text-decoration: none;
+    color: #00171f;
+    font-weight: 600;
+    font-size: 18px;
+    position: relative;
+}
+
+.right-section a:hover {
+    color: #0077b6;
+}
+
+.right-section a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    background-color: #0077b6;
+    transition: 0.3s;
+}
+
+.right-section a:hover::after {
+    width: 100%;
+}
+
+/* === Medium Screen Adjustment === */
+@media (max-width: 1024px) {
+    .right-section a {
+        font-size: 16px;
+    }
+
+    .right-section {
+        gap: 20px;
+    }
+}
+
+/* === Small Screens === */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        /* Show hamburger on small screens */
+    }
+
+    .right-section {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 70px;
+        right: 5vw;
+        background-color: #f9fbfc;
+        width: 200px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        gap: 15px;
+    }
+
+    .right-section.show a::after {
+        display: none;
+    }
+
+    .right-section.show a:hover::after {
+        display: none;
+    }
+
+    .right-section.show {
+        display: flex;
+        /* Show menu on click */
+    }
+
+    .right-section a {
+        font-size: 16px;
+        width: 100%;
+    }
+}

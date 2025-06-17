@@ -1,0 +1,40 @@
+<% layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/edit.css">
+
+<section class="edit-container">
+  <h1>Edit Post</h1>
+  <form id="editForm" action="/listings/<%= post._id %>?_method=PUT" method="POST" class="edit-form" enctype="multipart/form-data" novalidate>
+
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" value="<%= post.title %>" required />
+    <span class="error" id="titleError"></span>
+    <span class="success" id="titleSuccess"></span>
+
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="5" required><%= post.description %></textarea>
+    <span class="error" id="descriptionError"></span>
+    <span class="success" id="descriptionSuccess"></span>
+
+    <label for="image">Upload Image</label>
+    <input type="file" id="image" name="image" />
+
+    <label for="price">Price</label>
+    <input type="number" id="price" name="price" value="<%= post.price %>" required />
+    <span class="error" id="priceError"></span>
+    <span class="success" id="priceSuccess"></span>
+
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" value="<%= post.location %>" required />
+    <span class="error" id="locationError"></span>
+    <span class="success" id="locationSuccess"></span>
+
+    <label for="country">Country</label>
+    <input type="text" id="country" name="country" value="<%= post.country %>" required />
+    <span class="error" id="countryError"></span>
+    <span class="success" id="countrySuccess"></span>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+</section>
+
+<script src="/script/edit.js"></script>

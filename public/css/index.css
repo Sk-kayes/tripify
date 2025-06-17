@@ -1,0 +1,71 @@
+.listing-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    padding: 3rem 10vw;
+}
+
+/* Medium screens */
+@media screen and (min-width: 768px) {
+    .listing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large screens (1920px) */
+@media screen and (min-width: 1440px) {
+    .listing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Extra-large screens (2560px) */
+@media screen and (min-width: 2000px) {
+    .listing-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.list-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.list-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    z-index: 10;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.16);
+}
+
+.list-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.list-info {
+    padding: 1rem;
+}
+
+.list-info .title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.list-info .price {
+    color: #f57c00;
+    font-weight: 500;
+}
+
+.list-info .country {
+    color: #222222;
+    font-size: 0.95rem;
+    font-weight: 500;
+}

@@ -1,0 +1,24 @@
+<% layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/login.css">
+
+<div class="login-container">
+    <h2>Continue Your Tripify Journey</h2>
+    <form id="loginForm" action="/login" method="POST" novalidate>
+
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <span class="error" id="usernameError">❌ Username is required</span>
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <span class="error" id="passwordError">❌ Password is required</span>
+        </div>
+
+        <button type="submit">Log In</button>
+    </form>
+</div>
+
+<script src="/script/login.js"></script>
