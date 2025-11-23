@@ -15,14 +15,13 @@ router.route("/register")
 
 
 router.route("/login")
-    .get(saveRedirectUrl, (req, res)=> {
+    .get((req, res)=> {
         res.render("./listings/login.ejs"); // Show Log In form
     })
-    .post(passport.authenticate("local", {
+    .post(saveRedirectUrl, passport.authenticate("local", {
         failureRedirect: "/login",
         failureFlash: true
     }), wrapAsync(userController.userLogin));   // Take data for user Login
-
 
 //  Log out Route
 router.get("/logout", userController.userLogout);
