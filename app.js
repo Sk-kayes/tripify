@@ -21,7 +21,7 @@ const reviewRouter = require("./routes/reviewRoutes.js");
 const socialRouter = require("./routes/socialRoutes.js");
 const userRouter = require("./routes/user.js");
 
-const port = 8000;
+const port = process.env.PORT || 8080;
 const atlasUrl = process.env.ATLASDB_URL;
 
 main()
@@ -103,6 +103,6 @@ app.use("/", userRouter);
 
 
 // Server Running
-app.listen(port, ()=> {
-    console.log(`Server is running on port: ${port}`);
+app.listen(port, () => {
+  console.log("Server running on port", port);
 });
