@@ -34,8 +34,8 @@ main()
 
 async function main() {
     await mongoose.connect(atlasUrl, {
-        tls: true,
-        tlsAllowInvalidCertificates: true
+        serverSelectionTimeoutMS: 5000,
+        socketTimeoutMS: 45000,
     });
 };
 
